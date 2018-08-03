@@ -35,7 +35,7 @@ function callCheckList() {;
 			});
 			checkListCode += "</div>";
 			// output
-			var target = $(tweak_bb.page_id +" > "+tweak_bb.row_element).children(".item:contains(\"Checklist\")").parents(tweak_bb.row_element).find("div.details").css("overflow", "visible");
+			var target = $(tweak_bb.page_id +" > "+tweak_bb.row_element).children(".item:contains(\"Checklist\"):not(:contains(\"Replacement\"))").parents(tweak_bb.row_element).find("div.details").css("overflow", "visible");
 			if (target.find("span").length)
 				target = target.find("span:first");
 			target.append(checkListCode);
