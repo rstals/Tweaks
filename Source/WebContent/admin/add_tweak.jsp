@@ -17,7 +17,7 @@
 				javax.xml.parsers.DocumentBuilder,
 				org.w3c.dom.*,
 				au.edu.qut.b2.tweak.TweakItemComparator,
-				java.io.*;"
+				java.io.*"
 				
 	errorPage="/error.jsp"%>
 	
