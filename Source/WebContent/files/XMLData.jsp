@@ -73,6 +73,24 @@ for (int s = 0; s < totalPackages; s++){
 
 
 
-Collections.sort(tweakItems, new TweakItemComparator());
+//Collections.sort(tweakItems, new TweakItemComparator());
+// This is causing a Null Pointer exception in later versions of BB 9.1
+// Instead, used an in-line function identical to that contained in the TweakItemComparator class
+// There may be a way to fix the class, but the in-line implementation worked, so I stopped there.
+
+ // In-line implementation of sort
+Collections.sort(tweakItems, new Comparator<String[]>() {
+    public int compare(String[] x, String[] y) {
+    	
+    	if (x != null && x.length > 0 && y != null && y.length > 0){ 
+			String strgA = x[0]; 
+			String strgB = y[0]; 
+ 			return strgA.compareToIgnoreCase(strgB); 
+ 		}else{ 
+			return 0;   
+		} 
+     	
+    }
+});
 
 %>
